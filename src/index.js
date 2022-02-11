@@ -1,19 +1,10 @@
 import { default as cardSwipe } from './cardswipe.js';
 
 const VueCardSwipe = {
-  install(vue, opts) {
+  install(app, opts) {
     // provide plugin to Vue
-    vue.prototype.$cardSwipe = cardSwipe;
-    // Vue.mixin({
-    //   mounted() {
-    //     cardSwipe.methods.init(opts);
-    //   }
-    // });
+    app.config.globalProperties.$cardSwipe = cardSwipe;
   }
 }
 
 export default VueCardSwipe;
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueCardSwipe)
-}

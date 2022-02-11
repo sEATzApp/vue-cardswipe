@@ -1,6 +1,6 @@
 /*!
- * vue-cardswipe v0.1.8 
- * (c) 2019 Michael Wuori
+ * vue-cardswipe v0.1.11 
+ * (c) 2022 Michael Wuori
  * Released under the MIT License.
  */
 var cardSwipe = {
@@ -500,8 +500,6 @@ var cardSwipe = {
             };
 
             cardSwipe.settings = Object.assign(defaults, options);
-
-            console.log(cardSwipe.settings);
 
             // Is a prefix character defined?
             if (cardSwipe.settings.prefixCharacter) {
