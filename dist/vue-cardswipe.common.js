@@ -1,6 +1,6 @@
 /*!
- * vue-cardswipe v0.1.8 
- * (c) 2019 Michael Wuori
+ * vue-cardswipe v0.2.0 
+ * (c) 2022 Michael Wuori
  * Released under the MIT License.
  */
 'use strict';
@@ -503,8 +503,6 @@ var cardSwipe = {
 
             cardSwipe.settings = Object.assign(defaults, options);
 
-            console.log(cardSwipe.settings);
-
             // Is a prefix character defined?
             if (cardSwipe.settings.prefixCharacter) {
 
@@ -546,19 +544,10 @@ var cardSwipe = {
 };
 
 var VueCardSwipe = {
-  install: function install(vue, opts) {
+  install: function install(app, opts) {
     // provide plugin to Vue
-    vue.prototype.$cardSwipe = cardSwipe;
-    // Vue.mixin({
-    //   mounted() {
-    //     cardSwipe.methods.init(opts);
-    //   }
-    // });
+    app.config.globalProperties.$cardSwipe = cardSwipe;
   }
 };
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueCardSwipe);
-}
 
 module.exports = VueCardSwipe;
